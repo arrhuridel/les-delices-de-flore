@@ -1,0 +1,46 @@
+{
+  "name": "les-delices-de-flore",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "prisma generate && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:push": "prisma db push",
+    "db:seed": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' prisma/seed.ts",
+    "db:studio": "prisma studio"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.10.0",
+    "@stripe/stripe-js": "^3.0.0",
+    "next": "14.1.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "stripe": "^14.0.0",
+    "zustand": "^4.5.0",
+    "react-hook-form": "^7.51.0",
+    "@hookform/resolvers": "^3.3.4",
+    "zod": "^3.22.4",
+    "react-day-picker": "^8.10.0",
+    "date-fns": "^3.3.1",
+    "clsx": "^2.1.0",
+    "tailwind-merge": "^2.2.1",
+    "lucide-react": "^0.344.0",
+    "resend": "^3.2.0",
+    "nanoid": "^5.0.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "postcss": "^8",
+    "prisma": "^5.10.0",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5",
+    "ts-node": "^10.9.2"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "buildCommand": "prisma generate && next build",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "regions": ["cdg1"],
+  "env": {
+    "DATABASE_URL": "@database_url",
+    "STRIPE_SECRET_KEY": "@stripe_secret_key",
+    "STRIPE_WEBHOOK_SECRET": "@stripe_webhook_secret",
+    "NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY": "@stripe_publishable_key",
+    "NEXT_PUBLIC_APP_URL": "@app_url",
+    "RESEND_API_KEY": "@resend_api_key",
+    "CSRF_SECRET": "@csrf_secret"
+  }
+}
