@@ -28,22 +28,13 @@ model Order {
   id              String      @id @default(cuid())
   stripeSessionId String?     @unique
   stripePaymentId String?
-  status          OrderStatus @default(PENDING)
+  status          String      @default("PENDING") // PENDING | PAID | PROCESSING | SHIPPED | DELIVERED | CANCELLED
   customerEmail   String
   customerName    String
   total           Int         // cents
   items           OrderItem[]
   createdAt       DateTime    @default(now())
   updatedAt       DateTime    @updatedAt
-}
-
-enum OrderStatus {
-  PENDING
-  PAID
-  PROCESSING
-  SHIPPED
-  DELIVERED
-  CANCELLED
 }
 
 model OrderItem {
@@ -57,27 +48,17 @@ model OrderItem {
 }
 
 model Reservation {
-  id           String            @id @default(cuid())
+  id           String   @id @default(cuid())
   date         DateTime
-  timeSlot     String            // e.g. "10:00", "14:00"
-  type         ReservationType
+  timeSlot     String   // e.g. "10:00", "14:00"
+  type         String   // PICKUP | WORKSHOP
   name         String
   email        String
   phone        String?
-  participants Int               @default(1)
+  participants Int      @default(1)
   message      String?
-  status       ReservationStatus @default(CONFIRMED)
-  createdAt    DateTime          @default(now())
-}
-
-enum ReservationType {
-  PICKUP
-  WORKSHOP
-}
-
-enum ReservationStatus {
-  CONFIRMED
-  CANCELLED
+  status       String   @default("CONFIRMED") // CONFIRMED | CANCELLED
+  createdAt    DateTime @default(now())
 }
 
 model ContactMessage {
