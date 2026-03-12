@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', system-ui, sans-serif;
+    --font-playfair: 'Playfair Display', Georgia, serif;
+  }
+
+  * {
+    @apply border-light-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-anthracite font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-berry text-white rounded-full font-medium text-sm transition-all duration-200 hover:bg-berry-dark hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent text-berry border-2 border-berry rounded-full font-medium text-sm transition-all duration-200 hover:bg-berry hover:text-white hover:shadow-md active:translate-y-0;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent text-anthracite border border-light-border rounded-full font-medium text-sm transition-all duration-200 hover:border-berry hover:text-berry;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-light-border overflow-hidden transition-all duration-300 hover:shadow-md;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 rounded-xl border border-light-border bg-white text-anthracite placeholder-warm-gray focus:outline-none focus:ring-2 focus:ring-berry/30 focus:border-berry transition-all duration-200;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-anthracite mb-1.5;
+  }
+
+  .section-title {
+    @apply font-serif text-3xl md:text-4xl text-anthracite font-bold leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-warm-gray text-lg leading-relaxed;
+  }
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FDFAF6;
+}
+::-webkit-scrollbar-thumb {
+  background: #E8A0C0;
+  border-radius: 3px;
+}
+
+/* React Day Picker custom styles */
+.rdp {
+  --rdp-accent-color: #C8538A;
+  --rdp-background-color: #FAD5BE;
+  margin: 0;
+}
